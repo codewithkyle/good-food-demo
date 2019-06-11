@@ -26,6 +26,11 @@
         "dev:typescript": "tsc",
         "dev:bundle": "cross-env NODE_ENV=development webpack --config ./webpack.config.js",
         "dev:sass": "cross-env NODE_ENV=development node ./build-tools/sass.config.js",
+        "watch": "run-p watch:*",
+        "watch:typescript": "tsc -w",
+        "watch:webpack": "webpack -w",
+        "watch:sass": "cross-env NODE_ENV=watch node ./build-tools/sass.config.js",
+        "watch:sync": "node ./build-tools/sync.js",
         "create": "node ./build-tools/generator/generate.js",
         "setup": "node ./build-tools/setup/setup.js",
         "preview": "http-server ./docs/"
