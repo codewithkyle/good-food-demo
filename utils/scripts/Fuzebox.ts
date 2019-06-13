@@ -17,7 +17,7 @@ export class Fuzebox{
     }
 
     private loadGlobal():void{
-        fetch(`${ window.location.origin }/assets/manifest/global.json`,{
+        fetch(`${ window.location.origin }${ window.location.pathname }assets/manifest/global.json`,{
             headers: new Headers({
                 'X-Requested-With': 'XMLHttpRequest',
                 'Accepts': 'application/json'
@@ -38,7 +38,7 @@ export class Fuzebox{
     }
 
     private loadStyle(filename:string):void{
-        fetch(`${ window.location.origin }/assets/styles/${ filename }`,{
+        fetch(`${ window.location.origin }${ window.location.pathname }assets/styles/${ filename }`,{
             headers: new Headers({
                 'X-Requested-With': 'XMLHttpRequest',
                 'Accepts': 'application/text'
@@ -50,7 +50,7 @@ export class Fuzebox{
             const newStylesheet = document.createElement('style');
             newStylesheet.innerHTML = response;
             newStylesheet.setAttribute('rel', 'stylesheet');
-            newStylesheet.setAttribute('href', `${ window.location.origin }/assets/styles/${ filename }`);
+            newStylesheet.setAttribute('href', `${ window.location.origin }assets/styles/${ filename }`);
             document.head.appendChild(newStylesheet);
         })
         .catch(e => {
