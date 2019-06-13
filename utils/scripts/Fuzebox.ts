@@ -18,7 +18,7 @@ export class Fuzebox{
     }
 
     private loadGlobal():void{
-        fetch(`${ window.location.origin }${ window.location.pathname }assets/manifest/global.json`,{
+        fetch(`${ window.location.origin }${ window.location.pathname }assets/manifests/global.json`,{
             headers: new Headers({
                 'X-Requested-With': 'XMLHttpRequest',
                 'Accepts': 'application/json'
