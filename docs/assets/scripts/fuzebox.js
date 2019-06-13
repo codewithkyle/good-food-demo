@@ -71,6 +71,11 @@ var Fuzebox = (function () {
                     _this.loadStyle(response.styles[i]);
                 }
             }
+            if (response.scripts.length) {
+                for (var i = 0; i < response.scripts.length; i++) {
+                    _this.loadScript(response.scripts[i]);
+                }
+            }
         })
             .catch(function (e) {
             console.error('Failed to load global manifest', e);
@@ -79,8 +84,7 @@ var Fuzebox = (function () {
     Fuzebox.prototype.loadStyle = function (filename) {
         fetch("" + window.location.origin + window.location.pathname + "assets/styles/" + filename, {
             headers: new Headers({
-                'X-Requested-With': 'XMLHttpRequest',
-                'Accepts': 'application/text'
+                'X-Requested-With': 'XMLHttpRequest'
             }),
             credentials: 'include'
         })
@@ -91,6 +95,25 @@ var Fuzebox = (function () {
             newStylesheet.setAttribute('rel', 'stylesheet');
             newStylesheet.setAttribute('href', window.location.origin + "assets/styles/" + filename);
             document.head.appendChild(newStylesheet);
+        })
+            .catch(function (e) {
+            console.error("Failed to load stylesheet " + filename, e);
+        });
+    };
+    Fuzebox.prototype.loadScript = function (filename) {
+        fetch("" + window.location.origin + window.location.pathname + "assets/scripts/" + filename, {
+            headers: new Headers({
+                'X-Requested-With': 'XMLHttpRequest'
+            }),
+            credentials: 'include'
+        })
+            .then(function (request) { return request.text(); })
+            .then(function (response) {
+            var newScript = document.createElement('script');
+            newScript.innerHTML = response;
+            newScript.setAttribute('type', 'text/javascript');
+            newScript.setAttribute('src', "" + window.location.origin + window.location.pathname + "assets/scripts/" + filename);
+            document.body.appendChild(newScript);
         })
             .catch(function (e) {
             console.error("Failed to load stylesheet " + filename, e);

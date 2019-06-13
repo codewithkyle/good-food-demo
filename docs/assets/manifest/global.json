@@ -1,6 +1,5 @@
 {
-    "styles":
-    [
+    "styles": [
         "main.css",
         "fonts.css",
         "utility.css",
@@ -9,5 +8,9 @@
         "widths.css",
         "container.css",
         "wrapper.css"
+    ],
+    "scripts": [
+        "npm.uuid.js",
+        "npm.device-manager.js"
     ]
 }
