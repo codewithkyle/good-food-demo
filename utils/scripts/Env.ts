@@ -11,6 +11,8 @@ export class Env {
             // Checks if the `debug` attribute is set on the `document
             Env.setDebug(true);
         }
+
+        Env.stopLoading();
     }
 
     /**

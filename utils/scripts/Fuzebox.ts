@@ -1,10 +1,6 @@
-import { Env } from "./Env";
-import DeviceManager from '@pageworks/device-manager';
-
 export class Fuzebox{
     constructor(){
         console.log('Fuzebox has stared');
-        Env.stopLoading();
         this.init();
     }
 

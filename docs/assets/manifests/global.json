@@ -10,7 +10,6 @@
         "wrapper.css"
     ],
     "scripts": [
-        "npm.uuid.js",
-        "npm.device-manager.js"
+        "env.js"
     ]
 }

@@ -19,18 +19,13 @@
         "webpack": "cross-env NODE_ENV=development webpack --config ./webpack.config.js",
         "tsc": "tsc",
         "compile": "node ./build-tools/compile.config.js && npm-run-all compile:*",
-        "compile:scripts": "tsc && cross-env NODE_ENV=production webpack --config ./webpack.config.js",
+        "compile:scripts": "tsc && echo soon",
         "compile:styles": "cross-env NODE_ENV=production node ./build-tools/sass.config.js",
         "compile:lint": "npm-run-all lint:*",
         "dev": "node ./build-tools/compile.config.js && npm-run-all dev:*",
         "dev:typescript": "tsc",
-        "dev:bundle": "cross-env NODE_ENV=development webpack --config ./webpack.config.js",
+        "dev:bundle": "echo soon",
         "dev:sass": "cross-env NODE_ENV=development node ./build-tools/sass.config.js",
-        "watch": "run-p watch:*",
-        "watch:typescript": "tsc -w",
-        "watch:webpack": "webpack -w",
-        "watch:sass": "cross-env NODE_ENV=watch node ./build-tools/sass.config.js",
-        "watch:sync": "node ./build-tools/sync.js",
         "create": "node ./build-tools/generator/generate.js",
         "setup": "node ./build-tools/setup/setup.js",
         "preview": "http-server ./docs/"
@@ -44,20 +39,19 @@
         }
     },
     "dependencies": {
-        "@pageworks/device-manager": "^1.2.1",
+        "@pageworks/device-manager": "^1.2.3",
         "@pageworks/pjax": "^2.1.4",
         "@pageworks/state-manager": "^1.0.2",
         "color-convert": "^2.0.0",
-        "uuid": "^3.3.2",
-        "webpack": "^4.31.0"
+        "uuid": "^3.3.2"
     },
     "devDependencies": {
-        "browser-sync": "^2.26.3",
+        "browser-sync": "^2.26.7",
         "chalk": "^2.4.2",
         "clear": "^0.1.0",
         "cross-env": "^5.2.0",
         "dotenv": "^6.2.0",
-        "figlet": "^1.2.1",
+        "figlet": "^1.2.3",
         "http-server": "^0.11.1",
         "husky": "^1.3.1",
         "inquirer": "^6.3.1",
@@ -68,13 +62,12 @@
         "ora": "^3.4.0",
         "stylelint": "^9.10.1",
         "stylelint-config-recommended-scss": "^3.2.0",
-        "stylelint-scss": "^3.6.1",
-        "terser-webpack-plugin": "^1.2.3",
-        "tslint": "^5.15.0",
+        "stylelint-scss": "^3.8.0",
+        "terser-webpack-plugin": "^1.3.0",
+        "tslint": "^5.17.0",
         "tslint-config-airbnb": "^5.11.1",
         "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.4.3",
-        "watch": "^1.0.2",
-        "webpack-cli": "^3.3.2"
+        "typescript": "^3.5.2",
+        "watch": "^1.0.2"
     }
 }

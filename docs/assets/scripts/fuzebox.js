@@ -1,49 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
-
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var Env = (function () {
-    function Env() {
-        if (window.location.hostname.match(/.local/)) {
-            Env.setDebug(true);
-        }
-        else if (document.documentElement.getAttribute('debug') !== null) {
-            Env.setDebug(true);
-        }
-    }
-    Env.setDebug = function (status) {
-        Env.isDebug = status;
-    };
-    Env.stopLoading = function () {
-        document.documentElement.classList.remove('dom-is-loading');
-    };
-    Env.startLoading = function () {
-        document.documentElement.classList.add('dom-is-loading');
-    };
-    Env.isDebug = true;
-    return Env;
-}());
-exports.Env = Env;
-new Env();
-
-
-/***/ }),
-
-/***/ 6:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Env_1 = __webpack_require__(1);
 var Fuzebox = (function () {
     function Fuzebox() {
         console.log('Fuzebox has stared');
-        Env_1.Env.stopLoading();
         this.init();
     }
     Fuzebox.prototype.init = function () {
@@ -123,8 +82,3 @@ var Fuzebox = (function () {
 }());
 exports.Fuzebox = Fuzebox;
 new Fuzebox();
-
-
-/***/ })
-
-},[[6,0]]]);

@@ -194,11 +194,18 @@
         </style>
 
         <script>
-            modules = {};
+            var modules = {};
+            var module = {};
+            module.exports = function(module){ return module; };
+            var exports = {};
+
+            function require(value){
+                console.log(value);
+            }
         </script>
     </head>
     <body>
-        <script src="assets/scripts/runtime.js" async="async"></script>
+        <script src="assets/scripts/Fuzebox.js" defer="defer"></script>
             <div class="c-transition">
                 <div class="c-transition_primary"></div>
                 <div class="c-transition_secondary"></div>
@@ -210,7 +217,6 @@
                 </fuze-view>
                 <fuze-placeholder data-manifest="neat-component" data-load="lazy"></fuze-placeholder>
             </main>
-            <script src="assets/scripts/fuzebox.js"></script>
         </fuze-page>
     </body>
 </html>

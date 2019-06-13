@@ -1,13 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],[
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
-
 Object.defineProperty(exports, "__esModule", { value: true });
-var Env_1 = __webpack_require__(1);
-var uuid = __webpack_require__(2);
-var device_manager_1 = __webpack_require__(5);
+var Env_1 = require("./Env");
+var uuid = require("uuid/v4");
+var device_manager_1 = require("@pageworks/device-manager");
 var Application = (function () {
     function Application() {
         new device_manager_1.default(Env_1.Env.isDebug, true);
@@ -85,39 +80,3 @@ var Application = (function () {
 exports.Application = Application;
 new Application();
 Application.mountModules();
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Env = (function () {
-    function Env() {
-        if (window.location.hostname.match(/.local/)) {
-            Env.setDebug(true);
-        }
-        else if (document.documentElement.getAttribute('debug') !== null) {
-            Env.setDebug(true);
-        }
-    }
-    Env.setDebug = function (status) {
-        Env.isDebug = status;
-    };
-    Env.stopLoading = function () {
-        document.documentElement.classList.remove('dom-is-loading');
-    };
-    Env.startLoading = function () {
-        document.documentElement.classList.add('dom-is-loading');
-    };
-    Env.isDebug = true;
-    return Env;
-}());
-exports.Env = Env;
-new Env();
-
-
-/***/ })
-],[[0,0,5,6]]]);

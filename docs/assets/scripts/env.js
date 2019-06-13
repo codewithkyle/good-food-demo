@@ -1,10 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],[
-/* 0 */,
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
-
 Object.defineProperty(exports, "__esModule", { value: true });
 var Env = (function () {
     function Env() {
@@ -14,6 +8,7 @@ var Env = (function () {
         else if (document.documentElement.getAttribute('debug') !== null) {
             Env.setDebug(true);
         }
+        Env.stopLoading();
     }
     Env.setDebug = function (status) {
         Env.isDebug = status;
@@ -29,7 +24,3 @@ var Env = (function () {
 }());
 exports.Env = Env;
 new Env();
-
-
-/***/ })
-],[[1,0]]]);
