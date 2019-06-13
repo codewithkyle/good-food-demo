@@ -20,6 +20,14 @@ export class Env {
     public static setDebug(status:boolean):void{
         Env.isDebug = status;
     }
+
+    public static stopLoading():void{
+        document.documentElement.classList.remove('dom-is-loading');
+    }
+
+    public static startLoading():void{
+        document.documentElement.classList.add('dom-is-loading');
+    }
 }
 
 new Env();

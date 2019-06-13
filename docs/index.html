@@ -13,19 +13,30 @@
 
         <!-- <link rel="manifest" href="manifest.json"> -->
 
-        <title>The Turtle Trainer</title>
-        <meta name="description" content="A ComputerCraft simulation used to develope Turtles in a Lua VM on the web."/>
+        <title>Lazy Load All The Things!</title>
+        <meta name="description" content="Testing to see what it would be like to lazy load everything."/>
 
-        <link rel="stylesheet" href="assets/styles/main.css">
+        <!-- <link rel="stylesheet" href="assets/styles/main.css">
         <link rel="stylesheet" href="assets/styles/fonts.css">
         <link rel="stylesheet" href="assets/styles/utility.css">
         <link rel="stylesheet" href="assets/styles/spacing.css">
         <link rel="stylesheet" href="assets/styles/ratio.css">
         <link rel="stylesheet" href="assets/styles/widths.css">
         <link rel="stylesheet" href="assets/styles/container.css">
-        <link rel="stylesheet" href="assets/styles/wrapper.css">
+        <link rel="stylesheet" href="assets/styles/wrapper.css"> -->
 
         <style>
+            body{
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                min-height: 100vh;
+                width: 100vw;
+                display: block;
+                position: relative;
+                box-sizing: border-box;
+            }
+
             .c-transition{
                 width: 100vw;
                 height: 4px;
@@ -174,25 +185,43 @@
             }
         </style>
 
+        <style>
+            fuze-view{
+                width: 100%;
+                height: 100vh;
+                display: block;
+            }
+
+            fuze-placeholder{
+                visibility: hidden;
+                user-select: none;
+                pointer-events: none;
+                opacity: 0;
+                position: absolute;
+                line-height: 0;
+            }
+        </style>
+
         <script>
             modules = {};
         </script>
 
-        <link rel="stylesheet" href="assets/styles/homepage.css">
+        <!-- <link rel="stylesheet" href="assets/styles/homepage.css"> -->
     </head>
     <body>
-        <script src="assets/scripts/runtime.js"></script>
-        <script src="assets/scripts/globals.js" async="async"></script>
-        <script src="assets/scripts/npm.uuid.js" async="async"></script>
-        <script src="assets/scripts/npm.pageworks.js" async="async"></script>
+        <script src="assets/scripts/runtime.js" async="async"></script>
             <div class="c-transition">
                 <div class="c-transition_primary"></div>
                 <div class="c-transition_secondary"></div>
             </div>
-            <main role="main" class="js-pjax">
-                <article id="homepage" class="g-container -full u-mobile-padding">
-                </article>
+        <fuze-page>
+            <main role="main" data-manifest="homepage">
+                <fuze-view data-manifest="hero">
+                    CONTENT GOES HERE
+                </fuze-view>
+                <fuze-placeholder data-manifest="neat-component" data-load="lazy"></fuze-placeholder>
             </main>
-            <script src="assets/scripts/application.js"></script>
+            <script src="assets/scripts/fuzebox.js"></script>
+        </fuze-page>
     </body>
 </html>

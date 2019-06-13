@@ -2,7 +2,6 @@ import { Module } from './Module';
 import { Env } from './Env';
 import * as uuid from 'uuid/v4';
 import DeviceManager from '@pageworks/device-manager';
-import Pjax from '@pageworks/pjax';
 
 export class Application{
 
@@ -10,8 +9,7 @@ export class Application{
 
     constructor(){
         new DeviceManager(Env.isDebug, true);
-        // new Pjax({ debug: Env.isDebug });
-        document.documentElement.classList.remove('dom-is-loading');
+        Env.stopLoading();
     }
 
     /**
