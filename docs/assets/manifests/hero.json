@@ -1,0 +1,10 @@
+{
+    "styles": [
+        "hero.css",
+        "heading.css",
+        "button.css"
+    ],
+    "scripts": [
+        "Hero.js"
+    ]
+}

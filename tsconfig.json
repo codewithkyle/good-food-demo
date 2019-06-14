@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./docs/assets/scripts",
+        "outDir": "./_compiled",
         "sourceMap": false,
         "noImplicitAny": true,
         "experimentalDecorators": true,
@@ -30,6 +30,7 @@
         "./node_modules",
         "./build-tools",
         "./webpack.config.js",
-        "./docs/assets"
+        "./docs/assets",
+        "./_compiled"
     ]
 }
