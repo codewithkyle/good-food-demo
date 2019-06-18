@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="theme-color" content="#1f9eff">
+        <meta name="theme-color" content="#1475D7">
 
         <link rel="icon" sizes="192x192" href="assets/images/icon-192.png">
         <link rel="apple-touch-icon" href="assets/images/ios-icon.png">
@@ -211,9 +211,20 @@
             <div class="c-transition_secondary"></div>
         </div>
         <fuze-page>
+            <header data-manifest="header" data-load="eager">
+                <nav>
+                    <a href="#">
+                        <span>Markets</span>
+                    </a>
+                    <a href="#">Technologies</a>
+                    <a href="#">Resource Center</a>
+                    <a href="#">About Us</a>
+                </nav>
+            </header>
             <main role="main">
-                <fuze-view data-manifest="hero">
-                    CONTENT GOES HERE
+                <fuze-view data-manifest="hero" style="width:100vw;height:100vh;display:block;background-color:#1475D7;color:#ffffff;">
+                    <h1>Plexfab</h1>
+                    <p>Engineering trust around the world. Plexfab manufactures silicone hoses, tubing, ducting, and electronic components. Our proprietary process of compounding, calendaring, extruding, molding, and boding silicone makes our products world-call.</p>
                 </fuze-view>
                 <fuze-placeholder data-manifest="neat-component" data-load="lazy"></fuze-placeholder>
             </main>
