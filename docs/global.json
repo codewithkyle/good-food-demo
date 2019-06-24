@@ -10,6 +10,7 @@
         "wrapper.css"
     ],
     "scripts": [
-        "env.js"
+        "env.js",
+        "application.js"
     ]
 }

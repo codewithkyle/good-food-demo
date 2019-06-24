@@ -1,3 +1,5 @@
+import { Application } from './Application'
+
 export class Fuzebox{
 
     private _globalScriptRequestIndex:number;
@@ -96,7 +98,15 @@ export class Fuzebox{
             }
         })
         .then(()=>{
-            
+            try{
+                /** Starts the runtime application */
+                new Application();
+
+                /** Mount the initial modules */
+                Application.mountModules();
+            }catch{
+                console.error('Failed to start application');
+            }
         });
     }
 }

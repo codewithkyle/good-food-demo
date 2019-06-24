@@ -158,9 +158,3 @@ export class Application{
         return returnModule;
     }
 }
-
-/** Starts the runtime application */
-new Application();
-
-/** Mount the initial modules */
-Application.mountModules();
