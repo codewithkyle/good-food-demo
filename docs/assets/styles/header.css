@@ -1,0 +1,1 @@
+header{background-color:transparent;width:100vw;height:96px;display:inline-flex;align-items:center;position:fixed;top:0;left:0;color:#fff}header nav a{position:relative}header nav a ul{position:absolute;top:100%;left:0;visibility:hidden;user-select:none;pointer-events:none}header nav a ul li{display:list-item}

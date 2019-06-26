@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Env_1 = require("./Env");
 var uuid = require("uuid/v4");
-var device_manager_1 = require("@pageworks/device-manager");
 var Application = (function () {
     function Application() {
-        new device_manager_1.default(Env_1.Env.isDebug, true);
-        Env_1.Env.stopLoading();
+        console.log('Application has started');
     }
     Application.mountModules = function () {
         var pendingModules = Array.from(document.body.querySelectorAll('[data-module]:not([data-uuid])'));
@@ -78,5 +75,3 @@ var Application = (function () {
     return Application;
 }());
 exports.Application = Application;
-new Application();
-Application.mountModules();

@@ -8,8 +8,9 @@ export class Application{
     public static modules:Array<Module> = [];
 
     constructor(){
-        new DeviceManager(Env.isDebug, true);
-        Env.stopLoading();
+        console.log('Application has started');
+        // new DeviceManager(Env.isDebug, true);
+        // Env.stopLoading();
     }
 
     /**

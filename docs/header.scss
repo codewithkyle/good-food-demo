@@ -1,0 +1,33 @@
+@import 'settings';
+@import 'mixins';
+
+header{
+    background-color: transparent;
+    width: 100vw;
+    height: 96px;
+    display: inline-flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: $white;
+
+    nav{
+        a{
+            position: relative;
+
+            ul{
+                position: absolute;
+                top: 100%;
+                left: 0;
+                visibility: hidden;
+                user-select: none;
+                pointer-events: none;
+
+                li{
+                    display: list-item;
+                }
+            }
+        }
+    }
+}

@@ -81,7 +81,9 @@ var Fuzebox = (function () {
                     newScript.setAttribute('src', "" + window.location.origin + window.location.pathname + "assets/scripts/" + filename);
                     document.body.appendChild(newScript);
                     if (_this._globalScriptRequestIndex === requestIndex) {
-                        resolve();
+                        newScript.addEventListener('load', function () {
+                            resolve();
+                        });
                     }
                 })
                     .catch(function (e) {
@@ -93,6 +95,12 @@ var Fuzebox = (function () {
             }
         })
             .then(function () {
+            try {
+                new exports['Application'].prototype.constructor();
+            }
+            catch (e) {
+                console.error('Failed to start application', e);
+            }
         });
     };
     return Fuzebox;

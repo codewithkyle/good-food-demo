@@ -89,7 +89,9 @@ export class Fuzebox{
                     document.body.appendChild(newScript);
 
                     if(this._globalScriptRequestIndex === requestIndex){
-                        resolve();
+                        newScript.addEventListener('load', ()=>{
+                            resolve();
+                        });
                     }
                 })
                 .catch(e => {
@@ -99,10 +101,9 @@ export class Fuzebox{
         })
         .then(()=>{
             try{
-                new Application();
-                Application.mountModules();
-            }catch{
-                console.error('Failed to start application');
+                new exports['Application'].prototype.constructor();
+            }catch(e){
+                console.error('Failed to start application', e);
             }
         });
     }
