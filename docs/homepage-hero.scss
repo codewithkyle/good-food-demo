@@ -151,13 +151,14 @@ homepage-hero{
             opacity: 0.15;
             position: absolute;
             top: 0;
+            left: 50%;
             
             &:first-of-type{
-                left: 33%;
+                transform: translateX(-125px);
             }
 
             &:last-of-type{
-                right: 33%;
+                transform: translateX(125px);
             }
         }
 
@@ -228,12 +229,18 @@ homepage-hero{
                 product-calories,
                 product-macros{
                     color: #fff;
-                    font-size: 18px;
-                    margin: 0 48px;
+                    font-size: 22px;
+                    text-align: center;
+                    width: 250px;
                 }
 
                 product-name{
                     font-weight: 800;
+                    text-align: left;
+                }
+
+                product-macros{
+                    text-align: right;
                 }
 
                 product-calories,
