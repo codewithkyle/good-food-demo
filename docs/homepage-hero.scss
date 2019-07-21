@@ -152,23 +152,21 @@ homepage-hero{
             position: absolute;
             top: 0;
             left: 50%;
-
-            @media (min-width: 1919px){
-                &:first-of-type{
-                    transform: translateX(-125px);
-                }
-    
-                &:last-of-type{
-                    transform: translateX(125px);
-                }
-            }
             
             &:first-of-type{
                 transform: translateX(-96px);
+
+                @media (min-width: 1919px){
+                    transform: translateX(-125px);
+                }
             }
 
             &:last-of-type{
                 transform: translateX(96px);
+
+                @media (min-width: 1919px){
+                    transform: translateX(125px);
+                }
             }
         }
 
