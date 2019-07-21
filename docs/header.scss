@@ -4,29 +4,59 @@
 header{
     background-color: transparent;
     width: 100vw;
-    height: 96px;
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
-    color: $white;
+    padding: 48px 64px;
+    z-index: 1000;
 
     nav{
+        color: $black;
+
         a{
             position: relative;
+            margin-right: 32px;
+            text-transform: capitalize;
+            font-weight: 600;
+            cursor: pointer;
+            
+            &:last-of-type{
+                margin-right: 0;
+            }
 
-            ul{
-                position: absolute;
-                top: 100%;
-                left: 0;
-                visibility: hidden;
-                user-select: none;
-                pointer-events: none;
+            &.-logo{
+                margin-right: 96px;
+                font-size: 0;
+                text-transform: uppercase;
 
-                li{
-                    display: list-item;
+                strong{
+                    font-weight: 800;
+                    font-size: 26px;
                 }
+
+                span{
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+    social-media{
+        color: $white;
+
+        a{
+            margin-left: 16px;
+
+            svg{
+                width: 22px;
+                height: 22px;
+            }
+            
+            &:first-of-type{
+                margin-left: 0;
             }
         }
     }
