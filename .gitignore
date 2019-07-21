@@ -1,11 +1,11 @@
 # NPM
 # -------
-/node_modules
+node_modules
 
 
 # Other
 # -------
-/.sass-cache
+.sass-cache
 .DS_Store
 .stylelintcache
 _compiled
