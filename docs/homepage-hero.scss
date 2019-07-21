@@ -35,6 +35,7 @@ homepage-hero{
             input-shim{
                 width: 350px;
                 margin-right: 16px;
+                vertical-align: middle;
 
                 input{
                     border-radius: 4px;
@@ -172,6 +173,11 @@ homepage-hero{
 
         slide{
             text-align: center;
+            display: none;
+
+            &.is-active{
+                display: inline-block;
+            }
 
             img-shim{
                 height: 45vh;
