@@ -1,20 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var uuid = require("uuid/v4");
-var Application = (function () {
-    function Application() {
+const uuid = require("uuid/v4");
+class Application {
+    constructor() {
         console.log('Application has started');
     }
-    Application.mountModules = function () {
-        var pendingModules = Array.from(document.body.querySelectorAll('[data-module]:not([data-uuid])'));
-        pendingModules.forEach(function (requestedModule) {
-            var moduleIndex = requestedModule.dataset.module;
+    static mountModules() {
+        const pendingModules = Array.from(document.body.querySelectorAll('[data-module]:not([data-uuid])'));
+        pendingModules.forEach((requestedModule) => {
+            const moduleIndex = requestedModule.dataset.module;
             Application.createModule(moduleIndex, requestedModule);
         });
         Application.manageLazyParents();
-    };
-    Application.manageLazyParents = function () {
-        Application.modules.forEach(function (module) {
+    }
+    static manageLazyParents() {
+        Application.modules.forEach((module) => {
             if (module.futureParent) {
                 module.parent = Application.getModuleByUUID(module.futureParent.getAttribute('data-uuid'));
                 if (module.parent) {
@@ -23,11 +23,11 @@ var Application = (function () {
                 }
             }
         });
-    };
-    Application.createModule = function (index, view) {
-        var newModule = null;
+    }
+    static createModule(index, view) {
+        let newModule = null;
         try {
-            var id = uuid();
+            const id = uuid();
             newModule = new modules[index].prototype.constructor(view, id);
             newModule.mount();
         }
@@ -41,37 +41,35 @@ var Application = (function () {
             newModule.afterMount();
         }
         return newModule;
-    };
-    Application.destroyModule = function (uuid) {
-        var _this = this;
+    }
+    static destroyModule(uuid) {
         if (uuid) {
-            this.modules.forEach(function (module) {
+            this.modules.forEach((module) => {
                 if (module.uuid === uuid) {
-                    var index = _this.modules.indexOf(module);
+                    const index = this.modules.indexOf(module);
                     module.beforeDestroy();
                     module.destroy();
-                    _this.modules.splice(index, 1);
+                    this.modules.splice(index, 1);
                 }
             });
         }
         else {
             console.warn('No UUID provided');
         }
-    };
-    Application.getModuleByUUID = function (uuid) {
+    }
+    static getModuleByUUID(uuid) {
         if (!uuid) {
             console.warn('No UUID provided');
             return null;
         }
-        var returnModule = null;
-        this.modules.forEach(function (module) {
+        let returnModule = null;
+        this.modules.forEach((module) => {
             if (module.uuid === uuid) {
                 returnModule = module;
             }
         });
         return returnModule;
-    };
-    Application.modules = [];
-    return Application;
-}());
+    }
+}
+Application.modules = [];
 exports.Application = Application;

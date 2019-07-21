@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Env = (function () {
-    function Env() {
+class Env {
+    constructor() {
         if (window.location.hostname.match(/.local/)) {
             Env.setDebug(true);
         }
@@ -10,17 +10,16 @@ var Env = (function () {
         }
         Env.stopLoading();
     }
-    Env.setDebug = function (status) {
+    static setDebug(status) {
         Env.isDebug = status;
-    };
-    Env.stopLoading = function () {
+    }
+    static stopLoading() {
         document.documentElement.classList.remove('dom-is-loading');
-    };
-    Env.startLoading = function () {
+    }
+    static startLoading() {
         document.documentElement.classList.add('dom-is-loading');
-    };
-    Env.isDebug = true;
-    return Env;
-}());
+    }
+}
+Env.isDebug = true;
 exports.Env = Env;
 new Env();
