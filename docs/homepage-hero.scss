@@ -313,8 +313,9 @@ homepage-hero{
 
         carousel-controls{
             position: absolute;
-            right: 64px;
-            top: 128px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 64px;
             font-size: 0;
             white-space: nowrap;
             z-index: 15;
